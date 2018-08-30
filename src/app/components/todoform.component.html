@@ -1,0 +1,19 @@
+<form #doform="ngForm" (ngSubmit)="processForm(doform)">
+  <mat-form-field>
+    <input type="text" name="description" placeholder="Please enter a task description" matInput ngModel>
+  </mat-form-field>
+  <br>
+  <mat-radio-group name="priority" ngModel>
+    <mat-radio-button value="high">High</mat-radio-button>
+    <mat-radio-button value="medium">Medium</mat-radio-button>
+    <mat-radio-button value="low">Low</mat-radio-button>
+  </mat-radio-group>
+  <br>
+  <mat-form-field>
+    <input matInput name="duedate" [matDatepicker]="picker" placeholder="Choose a date" ngModel>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <button type="submit" mat-button mat-raised-button color="accent"><span>Add</span></button>
+</form>

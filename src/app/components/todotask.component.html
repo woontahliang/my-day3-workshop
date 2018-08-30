@@ -1,0 +1,10 @@
+<h3>Tasks</h3>
+<div *ngIf="taskList.length <= 0">
+  <p>There are no tasks!</p>
+</div>
+<mat-list>
+  <div *ngFor="let item of taskList;">
+    <mat-list-item>Description: {{ item.description }} - Priority: {{ item.priority }} - Due Date: {{ item.duedate }}</mat-list-item>
+    <mat-divider></mat-divider>
+  </div>
+</mat-list>
